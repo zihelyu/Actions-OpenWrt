@@ -13,9 +13,12 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 ##-----------------Add dev core for kenzo OpenClash------------------
-curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-arm64.tar.gz -o /tmp/clash.tar.gz
-tar zxvf /tmp/clash.tar.gz -C /tmp >/dev/null 2>&1
-chmod +x /tmp/clash >/dev/null 2>&1
-mkdir -p package/kenzo/luci-app-openclash/root/etc/openclash/core
-mv /tmp/clash package/kenzo/luci-app-openclash/root/etc/openclash/core/clash >/dev/null 2>&1
-rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
+#curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-arm64.tar.gz -o /tmp/clash.tar.gz
+#tar zxvf /tmp/clash.tar.gz -C /tmp >/dev/null 2>&1
+#chmod +x /tmp/clash >/dev/null 2>&1
+#mkdir -p package/kenzo/luci-app-openclash/root/etc/openclash/core
+#mv /tmp/clash package/kenzo/luci-app-openclash/root/etc/openclash/core/clash >/dev/null 2>&1
+#rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
+
+sed -i "s/tcp_redir_ports '22,25,53,143,465,587,853,993,995,80,443'/tcp_redir_ports '1:65535'/g" ./package/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "s/ProxyGame '_default'/ProxyGame 'nil'/g" ./package/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/GooglePlay '_default'/GooglePlay 'nil'/g" ./package/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/Proxy '_default'/Proxy 'nil'/g" ./package/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config
