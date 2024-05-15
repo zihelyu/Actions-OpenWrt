@@ -135,6 +135,8 @@ jobs:
       id: package
       run: |
         cd openwrt
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
         make defconfig
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
