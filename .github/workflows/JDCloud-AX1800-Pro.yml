@@ -9,7 +9,7 @@
 #
 ###############手动修改##############
 name: JDCloud-AX1800-Pro-JiaY-shi
-runs-on: self-hosted
+
 on:
   repository_dispatch:
   workflow_dispatch:
