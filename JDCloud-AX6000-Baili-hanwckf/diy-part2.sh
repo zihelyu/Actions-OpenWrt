@@ -27,4 +27,4 @@ sed -i '/myddns_ipv4/,$d' feeds/packages/net/ddns-scripts/files/etc/config/ddns
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
 
 sed -i "s/tcp_redir_ports '22,25,53,143,465,587,853,993,995,80,443'/tcp_redir_ports '1:65535'/g" ./feeds/luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config
-sed -i "s/ProxyGame '_default'/ProxyGame 'nil'/g" ./feeds/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/GooglePlay '_default'/GooglePlay 'nil'/g" ./feeds/luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/Proxy '_default'/Proxy 'nil'/g" ./feeds/luci/applications/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "s/ProxyGame '_default'/ProxyGame 'nil'/g" ./feeds/luci/applications/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/GooglePlay '_default'/GooglePlay 'nil'/g" ./feeds/luci/applications/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/Proxy '_default'/Proxy 'nil'/g" ./feeds/luci/applications/luci-app-passwall2/root/usr/share/passwall2/0_default_config
