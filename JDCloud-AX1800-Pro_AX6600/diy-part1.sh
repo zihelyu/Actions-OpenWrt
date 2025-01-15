@@ -18,4 +18,4 @@ git clone https://github.com/kenzok8/openwrt-packages package/kenzo
 git clone https://github.com/kenzok8/small package/small
 
 sed -i "s/tcp_redir_ports '22,25,53,143,465,587,853,993,995,80,443'/tcp_redir_ports '1:65535'/g" ./package/small/luci-app-passwall2/root/usr/share/passwall2/0_default_config
-sed -i "s/ProxyGame '_default'/ProxyGame 'nil'/g" ./feeds/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/GooglePlay '_default'/GooglePlay 'nil'/g" ./feeds/passwall_luci/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/Proxy '_default'/Proxy 'nil'/g" ./package/small/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "s/ProxyGame '_default'/ProxyGame 'nil'/g" ./package/small/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/GooglePlay '_default'/GooglePlay 'nil'/g" ./package/small/luci-app-passwall2/root/usr/share/passwall2/0_default_config && sed -i "s/Proxy '_default'/Proxy 'nil'/g" ./package/small/luci-app-passwall2/root/usr/share/passwall2/0_default_config
